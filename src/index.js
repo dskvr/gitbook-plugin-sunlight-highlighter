@@ -25,11 +25,10 @@ function SanitizeTheme(name) {
  * @param {Object} options Pass this.options to this parameter.
  */
 function loadDefaultOptions(options) {
-  const pluginOptions = config.get('sunlight-highlighter');
+  const pluginOptions = config;
+  defaultLineNumbers = pluginOptions.get("lineNumbers", "false");
 
-  defaultLineNumbers = pluginOptions.lineNumbers;
-
-  const theme = SanitizeTheme(pluginOptions.theme);
+  const theme = SanitizeTheme(pluginOptions.get("theme", "light"););
   defaultTheme = theme;
 }
 
